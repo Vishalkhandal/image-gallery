@@ -1,6 +1,5 @@
 import Gallery from "./pages/Gallery"
 import UploadImage from "./pages/UploadImage"
-import { useState } from "react"  
 
 function App() {
   return (

@@ -6,7 +6,7 @@ function Gallery() {
     
     const fetchImages = async () => {
         try {
-            const response = await storage.listFiles('68283e0200045569a8fd');
+            const response = await storage.listFiles(import.meta.env.VITE_STORAGE_ID);
             console.log(response.files[0].$id)
             setImages(response.files);
         } catch (error) {
@@ -23,7 +23,7 @@ function Gallery() {
             {images && images.map((file) => (
                 <img
                     key={file.$id}
-                    src={storage.getFilePreview('68283e0200045569a8fd', file.$id )}
+                    src={storage.getFilePreview(import.meta.env.VITE_STORAGE_ID, file.$id )}
                     alt={file.name}
                     className='rounded shadow'
                 />

@@ -16,7 +16,7 @@ function UploadImage() {
         setError(null)
 
         try {
-            const uploadedFile = await storage.createFile('68283e0200045569a8fd', ID.unique(), file)
+            const uploadedFile = await storage.createFile(import.meta.env.VITE_STORAGE_ID, ID.unique(), file)
             setFile(null)
         } catch (error) {
             console.error("Upload error: ", error)
